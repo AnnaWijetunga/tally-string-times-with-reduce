@@ -198,7 +198,6 @@
             // ES6 descructuring
             const [mins, secs] = timeCode.split(':').map(parseFloat);
             return (mins * 60) + secs;
-            console.log(mins, secs);
         })
         .reduce((total, vidSeconds) => total + vidSeconds)
         
@@ -209,6 +208,12 @@
         // and now, how many seconds are leftover? what wasn't able to be equally distributed?
         // mod says how many are left after they've been evenly distributed
         secondsLeft = secondsLeft % 3600;
+
+        const mins = Math.floor(secondsLeft / 60);
+        secondsLeft = secondsLeft % 60;
+
+
+        console.log(hours, mins, secondsLeft);
 
 
 </script>
