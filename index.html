@@ -184,7 +184,9 @@
 <script>
 // pull times out of DOM, convert to numbers, make them into minutes and seconds, and add them up and consol.log those values
 
-    const timeNodes = document.querySelectorAll('[data-time]');
+    // need to convert this node list to an array
+    // use Array.from to convert node list to an array
+    const timeNodes = Array.from(document.querySelectorAll('[data-time]'));
 
     console.log(timeNode);
 
