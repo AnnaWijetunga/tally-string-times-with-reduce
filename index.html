@@ -188,12 +188,19 @@
     // use Array.from to convert node list to an array
     const timeNodes = Array.from(document.querySelectorAll('[data-time]'));
 
-    console.log(timeNode);
+    console.log(timeNodes);
 
     // error!
     // map is not a functinon of timeNodes
     // timeNodes looks like an array, it's a node list!
-    const seconds = timeNodes.map(node => node.dataset.time);
+    const seconds = timeNodes
+        .map(node => node.dataset.time)
+        .map(timeCode => {
+            // break into minutes and seconds
+            // ES6 descructuring
+            const [mins, secs] = timeCode.split(':');
+            console.log(mins, secs);
+        });
 
 
 </script>
