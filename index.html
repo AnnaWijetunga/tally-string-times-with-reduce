@@ -188,8 +188,6 @@
     // use Array.from to convert node list to an array
     const timeNodes = Array.from(document.querySelectorAll('[data-time]'));
 
-    console.log(timeNodes);
-
     // error!
     // map is not a functinon of timeNodes
     // timeNodes looks like an array, it's a node list!
@@ -201,7 +199,16 @@
             const [mins, secs] = timeCode.split(':').map(parseFloat);
             return (mins * 60) + secs;
             console.log(mins, secs);
-        });
+        })
+        .reduce((total, vidSeconds) => total + vidSeconds)
+        
+        let secondsLeft = seconds;
+        const hours = Math.floor(secondsLeft / 3600);
+        // % is read as mod
+        // how many WHOLE seconds
+        // and now, how many seconds are leftover? what wasn't able to be equally distributed?
+        // mod says how many are left after they've been evenly distributed
+        secondsLeft = secondsLeft % 3600;
 
 
 </script>
