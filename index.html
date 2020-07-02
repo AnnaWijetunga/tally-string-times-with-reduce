@@ -198,7 +198,7 @@
         .map(timeCode => {
             // break into minutes and seconds
             // ES6 descructuring
-            const [mins, secs] = timeCode.split(':');
+            const [mins, secs] = timeCode.split(':').map(parseFloat);
             return (mins * 60) + secs;
             console.log(mins, secs);
         });
