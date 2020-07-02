@@ -199,6 +199,7 @@
             // break into minutes and seconds
             // ES6 descructuring
             const [mins, secs] = timeCode.split(':');
+            return (mins * 60) + secs;
             console.log(mins, secs);
         });
 
